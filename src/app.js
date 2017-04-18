@@ -1,4 +1,5 @@
 import React from 'react';
+import { DevTools } from './utils/index';
 
 export default class App extends React.Component {
 
@@ -6,7 +7,10 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <h2>Мое первое приложение на React</h2>
+            <div>
+                <h2>Мое первое приложение на React</h2>
+                [ process.env.MODE_DEV !== 'production' ? <DevTools/> : null]
+            </div>    
         );
     }
 }
